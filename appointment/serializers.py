@@ -45,7 +45,6 @@ class AppointmentSerializer(serializers.ModelSerializer):
 
                 _appointment = Appointment.objects.filter(start_date=start_date)
                 if _appointment: # check if there is an appointment already created for the date and time specified
-                    print(_appointment)
                     return ({'success':False, 'message':'There is an appointment created for this date and time'})
                 else:
                     appointment = Appointment.objects.create(       
