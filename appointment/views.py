@@ -22,7 +22,7 @@ class AppointmentView(viewsets.ModelViewSet):
                 return Response(data, status = status.HTTP_200_OK)
             return Response({'error':saved['message']}, status=status.HTTP_200_OK)
         
-        return Response({'error': "unabled to create appointment"}, status = status.HTTP_400_BAD_REQUEST)
+        return Response({'error': "unable to create appointment"}, status = status.HTTP_400_BAD_REQUEST)
 
     def retrieve(self, request, pk=None):
         try:
