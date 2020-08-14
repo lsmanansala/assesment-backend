@@ -12,6 +12,9 @@ class AppointmentView(viewsets.ModelViewSet):
 
 
     def create(self, request):
+        """
+        Create View Function for creating Appointments
+        """
         data = request.data
         serializer = AppointmentSerializer(data=data)
            
@@ -25,6 +28,9 @@ class AppointmentView(viewsets.ModelViewSet):
         return Response({'error': "unable to create appointment"}, status = status.HTTP_400_BAD_REQUEST)
 
     def retrieve(self, request, pk=None):
+        """
+        Function for retrieving single appointment using PK
+        """
         try:
             appointment = Appointment.objects.get(pk=pk)
             serializer = AppointmentSerializer(appointment)
